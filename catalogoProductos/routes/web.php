@@ -16,15 +16,20 @@ Route::get('/', function () { //LLAMA EL ARCHIVO PHP
 });
 
 Route::post('/catalogo', function(){
-    return view('catalogo');         //LLAMA EL ARCHIVO PHP
+    return view('catalogo.catalogo');         //LLAMA EL ARCHIVO PHP
 });
 
-Route::get( '/catalogo/{producto?}/{precio?}', function ($producto = "Pantalla lcd", $precio = "500") { //VALORES POR DEFECTO
-    return view('catalogo', array( //RETORNA VALORES AL PHP                                  
-        "producto" => $producto,
-        "precio" => $precio
-    ));
+Route::get( '/catalogo/{producto?}/{precio?}', function ($producto = "Pantalla lcd", $precio = null) { //VALORES POR DEFECTO
+    // return view('catalogo', array( //RETORNA VALORES AL PHP                                  
+    //     "producto" => $producto,
+    //     "precio" => $precio
+    // ));ç
+    return view('catalogo.catalogo')->with('producto', $producto)
+                                    ->with('precio', $precio)
+                                    ->with('elementos',array('RAM','CAMARA','MONITOR','DISCO DURO','TECLADO'));
 })->where([     //CONDICIONES                        
     'producto' => '[A-Za-z]+',   
     "precio" => '[0-9]+'
 ]);
+
+Route::get('/catalogofunction','catalogoController@index');
