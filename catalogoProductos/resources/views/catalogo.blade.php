@@ -1,0 +1,1 @@
+<h1>  Producto: {{$producto}} {{$precio}} </h1>
