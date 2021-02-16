@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { //LLAMA EL ARCHIVO PHP
     return view('welcome');
 });
 
