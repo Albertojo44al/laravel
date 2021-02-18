@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>TechNology</title>
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,29 +30,46 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand row color-white" href="{{ url('/') }}">
-                        
-                            <div class="col-md  col-md-offset-2">TechNology</div>
-                            <div class="col-md  col-md-offset-2"><img src="{{ asset('images/technology.png') }}" width="20px" height="20px"></div>
-                        
+                    
+                       
+             
+                    <a class="navbar-brand logo color-white " href="{{ url('/') }}">
+                        TechNology
+                        <span>
+                            <img src="{{ asset('images/technology.png') }}"> 
+                        </span>
                     </a>
+                       
+                    
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
+                   
+                        
+                  
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a class="color-white" href="{{ route('login') }}">Iniciar sesión</a></li>
-                            <li><a class="color-white" href="{{ route('register') }}">Registro</a></li>
+                            <li><a class="color-white-link" href="{{ route('login') }}">Iniciar sesión</a></li>
+                            <li><a class="color-white-link" href="{{ route('register') }}">Registro</a></li>
+                            <li></li>
                         @else
+                        <form class="navbar-form navbar-left" role="search" action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Productos" name="search">                        
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </form>
+                        <li>
+                             <a class="color-white-link" href="{{url('/home')}}">Catalogo</a>
+                        </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="#" class="color-white-link" data-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
