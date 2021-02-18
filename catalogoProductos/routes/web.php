@@ -10,7 +10,39 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\User;
+use App\carrito;
+use App\producto;
 Route::get('/', function () { //LLAMA EL ARCHIVO PHP
-    return view('welcome');
+    //$users = User::all();
+    // foreach($users as $user){
+    //     echo $user->name.'<br>';
+    //     echo $user->email.'<br>';
+    //     foreach($user->productos as $producto){
+    //         echo $producto->name.'<br>';
+    //     }
+    //     foreach($user->carritos as $carrito){
+    //         echo 'carrito id:'.$carrito->car_id.'<br>';
+    //         echo 'cantidad:'.$carrito->quantity.'<br>';
+    //     }
+    // }
+    // $carrito = carrito::all();
+    // foreach($carrito as $car){
+    //         foreach($car->productos as $product){
+    //            echo $product->name ;
+    //         }
+
+        
+    // }
+
+    // $productos = producto::all();
+    // foreach($productos as $producto){
+    //     echo $producto->name;
+    //     echo $producto->users->name;
+    // }
+     return redirect('/home');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
