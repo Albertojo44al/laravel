@@ -26,4 +26,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $table = 'users';
+
+
+    //un usuario puede tener muchos productos
+    public function productos()
+    {
+        return $this->hasMany('App\producto');
+    }
+
+    // un usuario puede tener muchos carritos
+    public function carritos()
+    {
+        return $this->hasMany('App\carrito');
+    }
 }

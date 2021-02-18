@@ -1,0 +1,14 @@
+.navbar-color {
+    background-color: darkslateblue;
+}
+
+.color-white {
+    color: #FFFF !important;
+    font-weight: bold;
+}
+
+.panel-heading {
+    background-color: darkslateblue !important;
+    color: #FFFF !important;
+    font-weight: bold;
+}
