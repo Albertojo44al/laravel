@@ -30,8 +30,11 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand color-white" href="{{ url('/') }}">
-                        {{ 'TechNology' }}
+                    <a class="navbar-brand row color-white" href="{{ url('/') }}">
+                        
+                            <div class="col-md  col-md-offset-2">TechNology</div>
+                            <div class="col-md  col-md-offset-2"><img src="{{ asset('images/technology.png') }}" width="20px" height="20px"></div>
+                        
                     </a>
                 </div>
 

@@ -76,7 +76,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> administrador
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" {{ old('inlineRadioOptions') ? 'checked' : '' }} value="1"> administrador
                                     </label>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> usuario
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"  {{ old('inlineRadioOptions') ? 'checked' : '' }} value="2"> cliente
                                     </label>
                                 </div>
                             </div>
