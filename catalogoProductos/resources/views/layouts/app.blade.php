@@ -35,7 +35,7 @@
                        
              
                     <a class="navbar-brand logo color-white " href="{{ url('/') }}">
-                        TechNology
+                        TechNology &nbsp;
                         <span>
                             <img src="{{ asset('images/technology.png') }}"> 
                         </span>
@@ -54,7 +54,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a class="color-white-link" href="{{ route('login') }}">Iniciar sesión</a></li>
+                            <li><a class="color-white-link" href="{{ route('login') }}">Iniciar sesiÃ³n</a></li>
                             <li><a class="color-white-link" href="{{ route('register') }}">Registro</a></li>
                             <li></li>
                         @else
@@ -63,7 +63,7 @@
                                 <input type="text" class="form-control" placeholder="Productos" name="search">                        
                             </div>
                             <button type="submit" class="btn btn-primary">
-                                <span class="glyphicon glyphicon-search"></span>
+                                <img src="{{ asset('images/loupe.png') }}"> 
                             </button>
                         </form>
                         <li>

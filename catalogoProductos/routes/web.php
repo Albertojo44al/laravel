@@ -61,7 +61,12 @@ Route::get('/editar-producto/{id}', array(
     'uses' => 'ProductosController@modificarProducto' 
 ));
 
-Route::get('/buscar/{busqueda?}', [
+Route::get('/buscar/{search?}', [
     'as' => 'busquedaProducto',
     'uses' => 'ProductosController@busqueda'
+]);
+
+Route::get('/carrito', [
+    'as' => 'carrito',
+    'uses' => 'ProductosController@agregarAcarrito'
 ]);

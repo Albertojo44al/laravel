@@ -3,6 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row">
+      <div class="col-md">
+      
         <div class="card">
             <div class="card-header">
                 <h2>agregar un nuevo producto</h2>
@@ -41,9 +43,15 @@
                     <label for="imagen"> Imagen </label>
                     <input type="file" class="form-control" id="imagen" name="imagen" accept="image/png, image/jpeg, image/jpg"  value="{{old('imagen')}}" >
                 </div>
+                    
                     <button type="submit" class="btn btn-primary">Agregar</button>
                 </form>
             </div>
+          </div>
+        </div>
+        <div class="col-md text-center">
+        <br><br>
+            <img class="a" src="{{asset('images/caja.png') }}">
         </div>
     </div>
 </div>

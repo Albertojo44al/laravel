@@ -108,16 +108,27 @@ class ProductosController extends Controller
         $producto->update();
 
         return redirect()->route('home')->with(array(
-            'message' => 'El articulo se editado correctamente!!'
+            'message' => 'El articulo se ha editado correctamente!!'
         ));
     }
     
     public function busqueda($busqueda = null){
+        if(is_null($busqueda)){
+          $busqueda = \Request::get('search');
+          
+          return redirect()->route('busquedaProducto', array('search'=> $busqueda));
+        }
         $productos = producto::where('name', 'LIKE', '%'.$busqueda.'%')->paginate(6);
 
         return view('productos.busqueda', array(
             'productos' => $productos,
-            'busqueda' => $busqueda
+            'search' => $busqueda
+        ));
+    }
+    
+     public function agregarAcarrito(){
+        return redirect()->route('home')->with(array(
+            'carrito' => 'El articulo se ha añadidio al carrito!!'
         ));
     }
 }

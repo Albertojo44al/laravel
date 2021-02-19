@@ -2,18 +2,28 @@
 
 @section('content')
 <div class="container">
-    
-    @if(session('message'))
-    <div class="alert alert-success">
-        {{session('message')}}
+    <div class="row">
+      <div class="col-md-10">
+        @if(session('message'))
+        <div class="alert alert-success">
+            {{session('message')}}
+        </div>
+        @endif
+        @if(session('carrito'))
+        <div class="alert alert-success">
+            Producto agregado al carrito!!
+        </div>
+        @endif
+      </div>
+      <div class="col-md-2">
+        @if(Auth::user()->role == 1)
+                <div class="row text-right pr-4">
+                    <a class="btn btn-success" href="{{route('crearProducto')}}">  Agregar producto</a> &nbsp;&nbsp; &nbsp;&nbsp;
+                </div>    
+                <br>
+        @endif 
+      </div>
     </div>
-    @endif
-    @if(Auth::user()->role == 1)
-            <div class="row text-right pr-4">
-                <button class="btn btn-success"> <a href="{{route('crearProducto')}}" class="color-white"> Agregar producto</a></a>  </button> &nbsp;&nbsp; &nbsp;&nbsp;
-            </div>    
-            <br>
-    @endif 
     <div class="panel panel-default">
         <div class="panel-heading text-center">CATALOGO</div>
 
@@ -35,7 +45,7 @@
                                     </div>
                                 @endif
                                 <div class="text-right">
-                                    <button class="btn btn-primary">  <img src="{{ asset('images/carrito-de-compras.png') }}"></button>
+                                    <a class="btn btn-primary" href="{{route('carrito')}}">  <img src="{{ asset('images/carrito-de-compras.png') }}"></a>
                                 </div>
                             </div>
                            
@@ -48,7 +58,8 @@
                                 <div class="text-right">
                                    
                                 </div>
-                                <h3>{{$prod->name}}</h3>
+                                <hr>
+                                <h4>{{$prod->name}}</h4>
                                
                                 <label> Cantidad:  {{$prod->quantity}} </label>  	 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <label> Precio: L {{number_format( $prod->price, 2, '.', '')}} </label>
@@ -74,11 +85,11 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">¿Estás seguro?</h4>
+                                    <h4 class="modal-title">Â¿EstÃ¡s seguro?</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>¿Seguro que quieres borrar el producto {{$prod->name}}?</p>
-                                    <p class="text-warning"><small>Si lo borras, nunca podrás recuperarlo.</small></p>
+                                    <p>Â¿Seguro que quieres borrar el producto {{$prod->name}}?</p>
+                                    <p class="text-warning"><small>Si lo borras, nunca podrÃ¡s recuperarlo.</small></p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

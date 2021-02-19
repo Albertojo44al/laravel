@@ -3,6 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-md">
+        
         <div class="card">
             <div class="card-header text-center col-lg-7">
                 <h2>Editar {{$producto->name}}</h2>
@@ -48,6 +50,11 @@
                 </form>
             </div>
         </div>
+        </div>
+        <div class="col-md text-center">
+          <br><br><br><br><br><br>
+          <img class="a" src="{{ asset('images/documento.png') }}">
+        </div> 
     </div>
 </div>
 @endsection
