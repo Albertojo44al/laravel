@@ -58,7 +58,7 @@
                             <li><a class="color-white-link" href="{{ route('register') }}">Registro</a></li>
                             <li></li>
                         @else
-                        <form class="navbar-form navbar-left" role="search" action="">
+                        <form class="navbar-form navbar-left" role="search" action="{{url('/buscar')}}">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Productos" name="search">                        
                             </div>

@@ -116,7 +116,7 @@ class ProductosController extends Controller
         $productos = producto::where('name', 'LIKE', '%'.$busqueda.'%')->paginate(6);
 
         return view('productos.busqueda', array(
-            'producto' => $productos,
+            'productos' => $productos,
             'busqueda' => $busqueda
         ));
     }
