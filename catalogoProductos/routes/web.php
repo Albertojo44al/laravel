@@ -15,38 +15,15 @@ use App\carrito;
 use App\Http\Controllers\Productos;
 use App\producto;
 Route::get('/', function () { //LLAMA EL ARCHIVO PHP
-    //$users = User::all();
-    // foreach($users as $user){
-    //     echo $user->name.'<br>';
-    //     echo $user->email.'<br>';
-    //     foreach($user->productos as $producto){
-    //         echo $producto->name.'<br>';
-    //     }
-    //     foreach($user->carritos as $carrito){
-    //         echo 'carrito id:'.$carrito->car_id.'<br>';
-    //         echo 'cantidad:'.$carrito->quantity.'<br>';
-    //     }
-    // }
-    // $carrito = carrito::all();
-    // foreach($carrito as $car){
-    //         foreach($car->productos as $product){
-    //            echo $product->name ;
-    //         }
-
-        
-    // }
-
-    // $productos = producto::all();
-    // foreach($productos as $producto){
-    //     echo $producto->name;
-    //     echo $producto->users->name;
-    // }
      return redirect('/home');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', array (
+    'as' => 'home',
+    'uses' => 'HomeController@index',
+));
 
 
 //Rutas del controlador de roductos
@@ -61,3 +38,30 @@ Route::post('/guardar-producto', array(
     'middleware' => 'auth',
     'uses' => 'ProductosController@guardarProducto'
 ));
+
+Route::get('/imagen/{filename}','ProductosController@getImagenes');
+
+Route::get('/producto/{id}', 'HomeController@getProducto');
+
+Route::get('/borrar-producto/{id}', array(
+    'as' => 'borrarProducto',
+    'middelware' => 'auth',
+    'uses' => 'ProductosController@borrar' 
+));
+
+Route::get('/editar-producto/{id}', array(
+    'as' => 'editarProducto',
+    'middelware' => 'auth',
+    'uses' => 'ProductosController@editar' 
+));
+
+ Route::post('/modificar-producto/{id}', array(
+    'as' => 'modificarProducto',
+    'middelware' => 'auth',
+    'uses' => 'ProductosController@modificarProducto' 
+));
+
+Route::get('/buscar/{busqueda?}', [
+    'as' => 'busquedaProducto',
+    'uses' => 'ProductosController@busqueda'
+]);

@@ -4,12 +4,12 @@
 <div class="container">
     <div class="row">
         <div class="card">
-            <div class="card-header">
-                <h2>agregar un nuevo producto</h2>
+            <div class="card-header text-center col-lg-7">
+                <h2>Editar {{$producto->name}}</h2>
                 <hr>
             </div>
             <div class="card-body text-center">
-                <form action="{{ route('guardarProducto')}}" method="POST" enctype="multipart/form-data" class="col-lg-7">
+                <form action="{{ route('modificarProducto',['id'=> $producto->id ])}}" method="POST" enctype="multipart/form-data" class="col-lg-7">
                 {!! csrf_field() !!}
                 @if($errors->any())
                     <div class="aler alert-danger">
@@ -23,25 +23,28 @@
 
                 <div class="form-group">
                     <label for="nombre"> Nombre </label>
-                    <input type="text" class="form-control" id="nombre" name="nombre"  value="{{old('nombre')}}">
+                    <input type="text" class="form-control" id="nombre" name="nombre"  value="{{$producto->name}}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion"> Descripcion </label>
-                    <textarea class="form-control" id="descripcion" name="descripcion"  value="{{old('descripcion')}}"></textarea>
+                    <textarea class="form-control" id="descripcion" name="descripcion"  >{{$producto->description}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="precio"> Precio </label>
-                    <input type="number" class="form-control" id="precio" name="precio" value="{{old('precio')}}">
+                    <input type="number" class="form-control" id="precio" name="precio" value="{{$producto->price}}">
                 </div>
                 <div class="form-group">
                     <label for="cantidad"> Cantidad </label>
-                    <input type="number" class="form-control" id="cantidad" name="cantidad"  value="{{old('cantidad')}}">
+                    <input type="number" class="form-control" id="cantidad" name="cantidad"  value="{{$producto->quantity}}">
                 </div>
                 <div class="form-group">
+                    <div class="img-mask-edit pointer">
+                        <img class="card-img-top producto-imagen" src="{{url('/imagen/'.$producto->image)}}" alt="Card image cap">
+                    </div>    
                     <label for="imagen"> Imagen </label>
-                    <input type="file" class="form-control" id="imagen" name="imagen" accept="image/png, image/jpeg, image/jpg"  value="{{old('imagen')}}" >
+                    <input type="file" class="form-control" id="imagen" name="imagen" accept="image/png, image/jpeg, image/jpg"  value="{{$producto->image}}" >
                 </div>
-                    <button type="submit" class="btn btn-primary">Agregar</button>
+                    <button type="submit" class="btn btn-primary">Editar</button>
                 </form>
             </div>
         </div>
