@@ -39,7 +39,7 @@ class ProductosController extends Controller
         $image = $request->file('imagen');
         if($image){
             $image_path = time().$image->getClientOriginalName();
-            \Storage::disk('image')->put($image_path, \File::get($image));
+            \Storage::disk('images')->put($image_path, \File::get($image));
             $producto->image = $image_path;
         }
 

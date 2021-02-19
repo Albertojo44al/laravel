@@ -21,8 +21,7 @@ class CreateProductsTables extends Migration
             $table->integer('quantity');
             $table->double('price');
             $table->integer('user_id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
     }
 
