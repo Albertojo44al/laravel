@@ -40,13 +40,13 @@
                     <input type="number" class="form-control" id="cantidad" name="cantidad"  value="{{$producto->quantity}}">
                 </div>
                 <div class="form-group">
-                    <div class="img-mask-edit pointer">
-                        <img class="card-img-top producto-imagen" src="{{url('/imagen/'.$producto->image)}}" alt="Card image cap">
+                    <div class="img-mask-edit">
+                        <img class="producto-imagen" src="{{url('/imagen/'.$producto->image)}}">
                     </div>    
                     <label for="imagen"> Imagen </label>
                     <input type="file" class="form-control" id="imagen" name="imagen" accept="image/png, image/jpeg, image/jpg"  value="{{$producto->image}}" >
                 </div>
-                    <button type="submit" class="btn btn-primary">Editar</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Editar</button>
                 </form>
             </div>
         </div>

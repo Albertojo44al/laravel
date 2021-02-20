@@ -11,7 +11,7 @@
         @endif
         @if(session('carrito'))
         <div class="alert alert-success">
-            Producto agregado al carrito!!
+            ¡Producto agregado al carrito!
         </div>
         @endif
       </div>
@@ -85,11 +85,11 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Â¿EstÃ¡s seguro?</h4>
+                                    <h4 class="modal-title">¿Estás seguro?</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Â¿Seguro que quieres borrar el producto {{$prod->name}}?</p>
-                                    <p class="text-warning"><small>Si lo borras, nunca podrÃ¡s recuperarlo.</small></p>
+                                    <p>¿Seguro que quieres borrar el producto {{$prod->name}}?</p>
+                                    <p class="text-warning"><small>Si lo borras, nunca podrás recuperarlo.</small></p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

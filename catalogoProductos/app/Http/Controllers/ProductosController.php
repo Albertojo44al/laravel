@@ -61,9 +61,9 @@ class ProductosController extends Controller
         if($user){
             Storage::disk('images')->delete($producto->image);
             $producto->delete();
-            $message = array('message' => 'producto eliminado correctamente!');
+            $message = array('message' => '�Producto eliminado correctamente!');
         }else{
-        $message = array('message' => 'El prodccto no se ha podido eliminar!');
+        $message = array('message' => '�El producto no se ha podido eliminar!');
         }
         return redirect()->route('home')->with($message);
     }
@@ -108,7 +108,7 @@ class ProductosController extends Controller
         $producto->update();
 
         return redirect()->route('home')->with(array(
-            'message' => 'El articulo se ha editado correctamente!!'
+            'message' => '¡El articulo se ha editado correctamente!'
         ));
     }
     
@@ -116,7 +116,7 @@ class ProductosController extends Controller
         if(is_null($busqueda)){
           $busqueda = \Request::get('search');
           
-          return redirect()->route('busquedaProducto', array('search'=> $busqueda));
+        //   return redirect()->route('busquedaProducto', array('search'=> $busqueda));
         }
         $productos = producto::where('name', 'LIKE', '%'.$busqueda.'%')->paginate(6);
 
@@ -128,7 +128,7 @@ class ProductosController extends Controller
     
      public function agregarAcarrito(){
         return redirect()->route('home')->with(array(
-            'carrito' => 'El articulo se ha añadidio al carrito!!'
+            'carrito' => '¡El articulo se ha agregado al carrito!'
         ));
     }
 }
