@@ -66,7 +66,36 @@
                                     </button>
                                   </div>
                                   <div class="modal-body text-center">
-                                      
+                                    <div class="row ">
+                                        <div class="col-md-2">
+                                        
+                                        </div>
+                                        <div class="col-md-8">
+                                          <div class="panel">
+                                            <h1> {{$prod->name}} <h1>
+                                          </div>
+                                          @if(Storage::disk('images')->has($prod->image))
+                                            <div class="img-mask-descripcion pointer">
+                                                <img class="card-img-top descripcion-imagen" src="{{url('/imagen/'.$prod->image)}}" alt="Card image cap">
+                                            </div>    
+                                          @endif
+                                            <br><br>
+                                          <label>
+                                              Precio: {{number_format( $prod->price, 2, '.', '')}}
+                                          </label>&nbsp;&nbsp;&nbsp;
+                                          <label>
+                                              Cantidad: {{$prod->quantity}}
+                                          </label>
+                                          <p> {{$prod->description}}</p>
+                                    
+                                         
+                                        </div>
+                                        <div class="col-md-2">
+                                          <div class="pull-right">
+                                            <a class="btn btn-success" href="{{route('carrito')}}">  <img src="{{ asset('images/carrito-de-compras.png') }}"></a>
+                                          </div>
+                                        </div>    
+                                      </div>
                                   </div>
                               </div>
                           </div>

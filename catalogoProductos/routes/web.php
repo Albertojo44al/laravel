@@ -14,13 +14,15 @@ use App\User;
 use App\carrito;
 use App\Http\Controllers\Productos;
 use App\producto;
-Route::get('/', function () { //LLAMA EL ARCHIVO PHP
+Route::get('/',array( function () { //LLAMA EL ARCHIVO PHP
     $productos = producto::orderBy('id','desc')->paginate(6);
 
     return view('welcome',array(
         'productos' => $productos
     ));  
-});
+},
+'as' => 'welcome'
+));
 
 Auth::routes();
 

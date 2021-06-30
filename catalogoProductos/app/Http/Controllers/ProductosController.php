@@ -127,7 +127,7 @@ class ProductosController extends Controller
     }
     
      public function agregarAcarrito(){
-        return redirect()->route('home')->with(array(
+        return redirect()->route('welcome')->with(array(
             'carrito' => '¡El articulo se ha agregado al carrito!'
         ));
     }
