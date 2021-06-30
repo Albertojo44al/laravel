@@ -32,6 +32,15 @@ class HomeController extends Controller
     }
 
 
+    public function welcome()
+    {
+        $productos = producto::orderBy('id','desc')->paginate(6);
+
+        return view('welcome',array(
+            'productos' => $productos
+        ));   
+    }
+
     public function getProducto($id){
         $producto = producto::find($id);
     

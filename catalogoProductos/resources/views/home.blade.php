@@ -44,9 +44,10 @@
                                         <a class="btn btn-warning" href="{{route('editarProducto', ['id' => $prod->id])}}">  <img src="{{ asset('images/edit.png') }}"> </a>    
                                     </div>
                                 @endif
-                                <div class="text-right">
-                                    <a class="btn btn-primary" href="{{route('carrito')}}">  <img src="{{ asset('images/carrito-de-compras.png') }}"></a>
-                                </div>
+
+                                    <div class="text-right">
+                                        <a class="btn btn-success" href="{{route('carrito')}}">  <img src="{{ asset('images/carrito-de-compras.png') }}"></a>
+                                    </div>
                             </div>
                            
                             @if(Storage::disk('images')->has($prod->image))

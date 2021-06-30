@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class producto extends Model
 {
-    protected $table = 'productos';
+    protected $table = 'products';
     //uno a muchos hasMany
     //uno a uno hasOne
     //muchos a uno belongsTo

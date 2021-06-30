@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarritoTable extends Migration
+class CarritoDetalle extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateCarritoTable extends Migration
      */
     public function up()
     {
-        Schema::create('shopping_car', function (Blueprint $table) {
-            $table->increments('id')->unique();;
-            $table->integer('user_id');
-            $table->timestamps();
+        Schema::create('shopping_car_details', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('product_id');
+            $table->integer('car_id');
+            $table->integer('quantity');
         });
-    }  
+    }
 
     /**
      * Reverse the migrations.
@@ -27,6 +28,6 @@ class CreateCarritoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shopping_car');
+        Schema::dropIfExists('shopping_car_details');
     }
 }

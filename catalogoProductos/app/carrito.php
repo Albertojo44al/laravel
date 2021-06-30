@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class carrito extends Model
 {
-    protected $table = 'carrito';
+    protected $table = 'shopping_car';
 
     //un carrito puede tener un usuario 
     public function users()
@@ -17,7 +17,7 @@ class carrito extends Model
     //un carrito puede tener muchos productos
     public function productos()
     {
-        return $this->hasMany('App\producto','product_id','product_id');
+        return $this->hasMany('App\Producto','product_id','product_id');
     }
 }
 

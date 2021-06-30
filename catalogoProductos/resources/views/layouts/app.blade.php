@@ -54,16 +54,16 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a class="color-white-link" href="{{ route('login') }}">Iniciar sesiÃ³n</a></li>
-                            <li><a class="color-white-link" href="{{ route('register') }}">Registro</a></li>
+                            <li><a class="color-white-link" href="{{ route('login') }}">Iniciar sesión</a></li>
+                            <li><a class="color-white-link" href="{{ route('register') }}">Crear una cuenta</a></li>
                             <li></li>
                         @else
                         <form class="navbar-form navbar-left" role="search" action="{{url('/buscar')}}">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Productos" name="search">                        
+                                <input type="text" class="form-control" placeholder="Productos" name="search" id="search" value="{{old('search')}}">                        
                             </div>
                             <button type="submit" class="btn btn-primary">
-                                <img src="{{ asset('images/loupe.png') }}"> 
+                                <img src="{{ asset('images/lupa.png') }}"> 
                             </button>
                         </form>
                         <li>

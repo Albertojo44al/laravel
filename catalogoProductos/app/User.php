@@ -33,12 +33,12 @@ class User extends Authenticatable
     //un usuario puede tener muchos productos
     public function productos()
     {
-        return $this->hasMany('App\producto');
+        return $this->hasMany('App\Producto');
     }
 
     // un usuario puede tener muchos carritos
     public function carritos()
     {
-        return $this->hasMany('App\carrito');
+        return $this->hasMany('App\Carrito');
     }
 }

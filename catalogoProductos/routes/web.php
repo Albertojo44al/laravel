@@ -15,7 +15,11 @@ use App\carrito;
 use App\Http\Controllers\Productos;
 use App\producto;
 Route::get('/', function () { //LLAMA EL ARCHIVO PHP
-     return redirect('/home');
+    $productos = producto::orderBy('id','desc')->paginate(6);
+
+    return view('welcome',array(
+        'productos' => $productos
+    ));  
 });
 
 Auth::routes();
